@@ -1,5 +1,7 @@
 ### ROADMAP: IoT Engineer
 
+
+
 ## Math
 
 - College Algebra
@@ -10,6 +12,8 @@
 - Discrete Math
 - Probability and Computing
 - Combinatorics
+
+
 
 ## Software
 
@@ -35,14 +39,17 @@
 - Python Pandas
 - Python Excel
 
+
+
 ## Data Science
 
-- SQL
 - PostgreSQL
 - Data Architectures
 - Database Systems
 - Data Management
 - Data Pipelines
+
+
 
 ## Cloud Computing
 
@@ -52,6 +59,8 @@
 - IoT Programming
 - AWS Data Science
 - Docker
+
+
 
 ## Embedded Systems
 
@@ -66,9 +75,10 @@
 - Serial Communication Protocols
 - Embedded System Design
 
+
+
 ## Linux
 
-- Linux CLI and Bash
 - eBPF
 - System Programming
 - Kernel Programming
@@ -79,6 +89,8 @@
 - Linux Administration
 - Embedded Linux
 
+
+
 ## AI
 
 - Deep Learning
@@ -88,15 +100,18 @@
 - Designing Machine Learning Systems
 - Machine Learning Pipelines
 
+
+
 ## Networking
 
-- Networking Introduction
 - Introduction to 5G
 - Wireshark
 - Introduction to Information Security
 - Wi-Fi 7
 - Network Firewalls and VPNs
 - Wireless Communication
+
+
 
 ## Security
 
@@ -107,6 +122,8 @@
 - Penetration Testing
 - Embedded Security
 
+
+
 ## Hardware
 
 - Operating Systems
@@ -114,6 +131,8 @@
 - Computer Architecture
 - Schematics
 - Electronics Introduction
+
+
 
 ## Engineering
 
@@ -136,12 +155,16 @@
 - Micro-Electronics Introduction
 - SLAM
 
+
+
 ## Architecture
 
 - System Performance
 - Foundations of Scalable Systems
 - System Analysis and Design
 - Software Architecture
+
+
 
 ## Web
 
@@ -150,4 +173,3 @@
 - React
 - Tailwind
 - PHP with Laravel
-
