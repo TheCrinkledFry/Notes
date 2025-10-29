@@ -26,7 +26,11 @@
 
 **include**
 
+**include_once**
 
+**require_once**
+
+**const**
 
 
 
