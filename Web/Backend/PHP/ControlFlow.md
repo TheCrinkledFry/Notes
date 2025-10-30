@@ -20,6 +20,21 @@ When it comes to this, it is basically the same as C.
   	return "this is a good thing";
   }
 
+  if ($x === 30)
+    echo "single thing";
+```
+
+> [!NOTE]
+>
+> Just like in C, if there is only one statement will be executed there is no need to put the curly braces.
+
+
+
+### if-else if
+
+```php
+<?php
+  $x = 50;
 
   if ($x === 23){
   	echo "yes";
@@ -27,12 +42,20 @@ When it comes to this, it is basically the same as C.
   else if ($x === 50){
       echo "no";
   }
+```
+
+
+
+### if-else
+
+```php
+<?php
+  $x = 50;
 
   if ($x === 50){
 	echo "yay";
   }
   else {
-    echo "maybe";
+   	echo "maybe";
   }
 ```
-
