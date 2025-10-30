@@ -32,9 +32,33 @@
 
 **const**
 
+**return**
+
+**try**
+
+**catch**
+
+**finally**
+
+**class**
+
+**new**
+
+**break**
+
+**continue**
+
+**public**
+
+**private**
+
+**protected**
+
+**default**
 
 
-This next week tuesday will have exam review and next week thursday will be exam. This will cover lectures 6 - 8.
+
+This next week Tuesday will have exam review and next week Thursday will be exam. This will cover lectures 6 - 8.
 
 
 

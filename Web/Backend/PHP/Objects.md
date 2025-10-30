@@ -55,8 +55,8 @@ class Car{
     protected $color;
     public $cost;
     
-    public function __construct(){
-		this.
+    public function __construct($cost){
+		this->$cost = $cost;
     }
 }
 ```
