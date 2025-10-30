@@ -76,6 +76,10 @@ An *array* is an ordered maps that associates keys with values. There are two wa
 >
 > When making an array the values do not need to all be the same type
 
+> [!NOTE]
+>
+> Can use the function or [], but the [] is more modern and does the same thing using the function for making an array
+
 
 
 To access the index of the array it is the same as any other language, but just make sure to put the dollar sign in front of the name.
@@ -86,18 +90,74 @@ To access the index of the array it is the same as any other language, but just 
 
 
 
+> [!TIP]
+>
+> Can have an array nested in another array.
+
+
+
+When it comes to adding elements into an array can just do:
+
+- $ArrName[] = val --> this will auto add the value to the end of the array and increase the index by one so that is where it will be
+- Manually, if the size of the array is known then can just write to an index that does not exist and assign it a value this this will add the value to that index.
+
+
+
+When it comes to removing an element from the array, use the **unset**() function for this. Just pass the array in with the index of the element to remove. This will also decrease the size of the array
+
+
+
+To get the size of an array use the built in function **count()**.
+
+
+
 For Example
 
 ```php
 <?php
-    $ArrMix = [3, "yes", 4.5];
-	$ArrSame = [4];
-	$ArrFunc = array("no", "yes");
-	$ArrAsso = ["Gabriel" => 50, 120 => "no"];
+ $ArrMix = [3, "yes", 4.5];
+$ArrSame = [4];
+$ArrFunc = array("no", "yes");
+$ArrAsso = ["Gabriel" => 50, 120 => "no"];
+
+// Adding elements
+$ArrAsso["Mouse"] = "gay";
+$ArrSame[] = 40;
+$ArrSame[4] = 400;
 	
-	echo $ArrAsso["Gabriel"];
-	echo $ArrSame; // this is considered wrong and makes error
-	echo $ArrSame[0];
+echo $ArrAsso["Gabriel"];
+// echo $ArrSame; -->  this is considered wrong and makes error
+echo $ArrSame[0];
+print_r($ArrMix); // Will display whole array
+print_r($ArrAsso); // Will display whole array
+print_r(4);
+
+// Removing element
+echo "<br/>";
+echo "Inital: " . count($ArrAsso);
+echo "<br/>";
+unset($ArrAsso["Gabriel"]);
+echo "<br/>";
+echo "After: " . count($ArrAsso);
+```
+
+
+
+When it comes to multidimentional arrays
+
+```php
+<?php
+
+$tasks = [
+    ['Learn PHP programming', 2],
+    ['Practice PHP', 2],
+    ['Work', 8],
+    ['Do exercise' 1],
+];
+
+print_r($tasks);
+
+
 ```
 
 
