@@ -63,17 +63,44 @@ class Car{
 
 
 
-### Methods
-
-When it comes to *visibility modifiers* for methods, each methods needs one too. This would go BEFORE the keyword *function*. 
-
-
+### Construct and Destruct
 
 When it comes to methods (functions) the most important one is called the *constructor*. This is the default method that is used to actually create the instance of the object. This function will have a special name of **__construct()** and this should always have a *visibility modifier* of public.
 
 
 
 Now the parameters of the **__construct()** should only be properties made for that object that should be assigned some value when the object is created.
+
+
+
+The opposite of **__construct()** is **__destruct()**. This function is automatically called once the object is destroyed (no reference to it) or the script ends. This function will not be able to take any parameters. This is where all resource clean up should be done like closing files, connections, etc.
+
+
+
+```php
+<?php
+
+class Car{
+  private $brand;
+  protected $color;
+  public $cost;
+
+  public function __construct($brand, $color, $cost){
+    $this->brand = $brand;
+    $this->color = $color;
+    $this->cost = $cost;
+  }
+  public function __deconstructor(){
+    echo "<p>This was a smart move to end now</p>";
+  }
+}
+```
+
+
+
+### Methods
+
+When it comes to *visibility modifiers* for methods, each methods needs one too. This would go BEFORE the keyword *function*. 
 
 
 
