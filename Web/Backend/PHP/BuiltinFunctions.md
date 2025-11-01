@@ -66,11 +66,11 @@
 
 24. `json_decode()` --> Takes four parameters max. The first is of type string with the string being in a string format. The second is a boolean value for how the return data should be encoded, false for retuns PHP object and true retuns associative array; by default this is set to false. The third and fourth are not really needed to be worried about and just leave them as is.
 
-25. `` --> 
+25. `empty()` --> This takes a single parameter with a parameter bring the name of a variable or array index. This function will check if the value is not set to something. This means that it will return true if the value does not exist, set to null, or if the value has the respected zero value (0 for int, "" for string, false for boolean, etc). All other cases will return false.
 
-26. `` --> 
+26. `isset()` --> This takes a single parameter with the parameter being the name of some variable or index in an array to see if it exist AND if it is not null. This will return true if 
 
-27. `` --> 
+27. `unset()` --> This will take a single parameter with the parameter being the name of a variable or array index and set its value equal to null 
 
 28. `` --> 
 

@@ -26,9 +26,9 @@ Here are the common steps that would be taken to execute a curl request:
   	1. This is required and it is the made curl object from **curl_init()**
   	1. The is required and it is the option that will be added to the curl object
   	1. This is required and it is the respected value for the selected option
-- **curl_exec(curl resource)** --> Returns true or false and right away displays content to the screen like **readfile()**. However, will return a string of the  response if the option *CURLOPT_RETURNTRANSFER* was set
+- **curl_exec(curl resource)** --> Returns true or false and right away displays content to the screen like **readfile()**. However, will return a string of the response if the option *CURLOPT_RETURNTRANSFER* was set
   1. This is the curl resource made from **curl_init()**
-- **curl_close()**
+- **curl_close()** --> This will close the curl made resource.
   1. Takes the curl object to close resource to
 
 
@@ -37,7 +37,7 @@ The **curl_init()** is what is needed to first create a curl resource object. Th
 
 > [!TIP]
 >
-> Can pass in the string URL that this will be making request to in the **curl_init()** function, and this would prevent the need to needing call the **curl_setopt()** and set it that way. However, it can be done also with an   option.
+> Can pass in the string URL that this will be making request to in the **curl_init()** function, and this would prevent the need to needing call the **curl_setopt()** and set it that way. However, it can be done also with an the option *CURLOPT_URL*.
 
 
 
