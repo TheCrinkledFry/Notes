@@ -69,3 +69,103 @@ Common options here
 | CURLOPT_USERPWD          | Passes a username and password for basic HTTP authentication. Used in conjunction with CURLOPT_HTTPAUTH. The data value for this is a string with the format `username:password` |
 | CURLOPT_HTTPAUTH         | The HTTP authentication method to use (e.g.,CURLAUTH_BASIC, CURLAUTH_DIGEST). The data value for this will be |
 
+
+
+#### Previous session exist when trying to connect
+
+```pseudocode
+Array
+(
+    [0] => Status: ERROR
+    [1] => MSG: Previous Session Found
+    [2] => Action: Must clear session first
+)
+```
+
+#### New connection made
+
+```pseudocode
+Array
+(
+    [0] => Status: OK
+    [1] => MSG: Session Created
+    [2] => 26b988b9f267068ff8752eb27f824ef7bde6d484 // example payload will always be 40 or could be null (aka no data)
+)
+```
+
+
+
+#### Sucessful clearing of session
+
+```pseudocode
+Array
+(
+    [0] => Status: OK
+    [1] => MSG: Previous Session Found
+    [2] => Action: Session Cleared
+)
+```
+
+#### Failure of clearing session
+
+```pseudocode
+Array
+(
+    [0] => Status: ERROR
+    [1] => MSG: No previous session found
+    [2] => Action: Create session first
+)
+```
+
+
+
+#### Success of closing session
+
+```pseudocode
+Array
+(
+    [0] => Status: OK
+    [1] => MSG: SID closed successfully
+    [2] => Action: Done
+)
+```
+
+#### Failure of closing session
+
+```pseudocode
+Array
+(
+    [0] => Status: ERROR
+    [1] => MSG: No previous session found
+    [2] => Action: Create session first
+)
+```
+
+
+
+#### Incorrect endpoint reached
+
+```pseudocode
+Array
+(
+    [0] => Status: ERROR
+    [1] => MSG: Invalid/Disabled Endpoint
+    [2] => Action: Please try again
+)
+```
+
+
+
+session id could be killed randomly at any point of time
+
+
+
+log execution time
+
+
+
+log which call is being made and will log error, but if successful then just tell the call that was successful
+
+
+
+Once the session id is gotton successfully, create a constant variable for it so it does not change

@@ -74,11 +74,15 @@ Crontab -l --> List current users crontab
 
 
 
-Payload will come in as session ID
+Payload will come in as session ID if all good when creating session
 
 
 
-There is random white noise built to randomly disconnect, so must have a way to reconnect or something. This should also be logged. Important thing to know is this can happen at any part of the system. For example another can be the session not being closed when we thought it did.
+When it comes to making the curl request, is there a way to tract how long the actual request took?
+
+
+
+There is random white noise built to randomly disconnect, so must have a way to reconnect or something. This should also be logged. Important thing to know is this can happen at any part of the system.
 
 
 
@@ -94,81 +98,156 @@ Always make sure to close session once done with everything
 
 
 
-
-
-## States for success connection response
-
-When it comes to creating a session, this comes from going to the URL `https://cs4743.professorvaladez.com/api/create_session`
-
-### Success Response
-
-Status will be --> OK
-
-### MSG states
-
-- Session Created
-
-### Last part
-
-- Payload data for session id, which will always be unique
+session id could be killed randomly at any point of time
 
 
 
-## Error in creating session
-
-### Status
-
-- ERROR
+log execution time
 
 
 
-### MSG
-
-- Invalid credentials
-- Previous Session Found
+log which call is being made and will log error, but if successful then just tell the call that was successful
 
 
 
-### Action
-
-- This will have the format: Action: Must clear session first
-
-## Clearing the session
-
-This involves using the ULR of `https://cs4743.professorvaladez.com/api/clear_session` to have this done.
+Once the session id is gotton successfully, create a constant variable for it so it does not change
 
 
 
-## Clearing success
-
-### Status
-
-- OK
+When trying to first create session, if it is not able to because a previous one exist, then we need to clear the session then and then try to create one again.
 
 
 
-### MSG
+### Data format to pass
 
-- Previous Session Found
-
-
-
-### Action
-
-- Session cleared
+- When calling the clear_session it is -->                                                  `"username=" . USERNAME . "&password=" . PASSWORD;`
+- When calling the create_session it is -->                                                `"username=" . USERNAME . "&password=" . PASSWORD;`
+- When calling the close_session it is --> `"sid=$sid"`
+- When calling the query_files it is -->                                                      `$Data = "uid=" . USERNAME . "&sid=$sid";`
+- When calling the ___ it is --> 
 
 
 
-## Session clear fail
+#### Previous session exist when trying to connect
 
-### Status
+```pseudocode
+Array
+(
+    [0] => Status: ERROR
+    [1] => MSG: Previous Session Found
+    [2] => Action: Must clear session first
+)
+```
 
-- ERROR
+#### New connection made
 
-### MSG
+```pseudocode
+Array
+(
+    [0] => Status: OK
+    [1] => MSG: Session Created
+    [2] => 26b988b9f267068ff8752eb27f824ef7bde6d484 // example payload will always be 40 or could be null (aka no data)
+)
+```
 
-- No previous session found
 
-### Action
 
-- Create session first
+#### Sucessful clearing of session
+
+```pseudocode
+Array
+(
+    [0] => Status: OK
+    [1] => MSG: Previous Session Found
+    [2] => Action: Session Cleared
+)
+```
+
+#### Failure of clearing session
+
+```pseudocode
+Array
+(
+    [0] => Status: ERROR
+    [1] => MSG: No previous session found
+    [2] => Action: Create session first
+)
+```
+
+
+
+#### Success of closing session
+
+```pseudocode
+Array
+(
+    [0] => Status: OK
+    [1] => MSG: SID closed successfully
+    [2] => Action: Done
+)
+```
+
+#### Failure of closing session
+
+```pseudocode
+Array
+(
+    [0] => Status: ERROR
+    [1] => MSG: No previous session found
+    [2] => Action: Create session first
+)
+```
+
+
+
+#### Incorrect endpoint reached
+
+```pseudocode
+Array
+(
+    [0] => Status: ERROR
+    [1] => MSG: Invalid/Disabled Endpoint
+    [2] => Action: Please try again
+)
+```
+
+
+
+#### Failure to query files
+
+```pseudocode
+Array
+(
+    [0] => Status: ERROR
+    [1] => MSG: SID/UID Missing
+    [2] => Action: Please try again
+)
+```
+
+#### No new files found in query files
+
+```pseudocode
+Array
+(
+    [0] => Status: OK
+    [1] => MSG: No new files found
+    [2] => Action: None
+)
+```
+
+#### Sucess to query files example
+
+```pseudocode
+Array
+(
+    [0] => Status: OK
+    [1] => MSG: ["487932100-Tax_Returns-20251101_21_26_55.pdf","487932100-MOU-20251101_21_26_55.pdf","487932100-Internal_1-20251101_21_26_55.pdf","487932100-Closing-20251101_21_26_55.pdf","487932100-Title_2-20251101_21_26_55.pdf","487932100-Internal-20251101_21_26_55.pdf","487932100-Credit-20251101_21_26_55.pdf","487932100-Title-20251101_21_26_55.pdf","613490078-Tax_Returns_1-20251101_21_27_05.pdf","613490078-Internal_4-20251101_21_27_05.pdf","613490078-Financial-20251101_21_27_05.pdf","613490078-Tax_Returns_3-20251101_21_27_05.pdf","613490078-MOU-20251101_21_27_05.pdf","613490078-Tax_Returns_2-20251101_21_27_05.pdf","613490078-Tax_Returns-20251101_21_27_05.pdf","613490078-MOU_5-20251101_21_27_05.pdf","613490078-Internal-20251101_21_27_05.pdf","014987236-Internal-20251101_21_27_18.pdf","014987236-Title-20251101_21_27_18.pdf","014987236-Internal_1-20251101_21_27_18.pdf","014987236-MOU-20251101_21_27_18.pdf","014987236-Closing-20251101_21_27_18.pdf","739421800-Financial-20251101_21_27_31.pdf","739421800-MOU-20251101_21_27_31.pdf","739421800-Financial_3-20251101_21_27_31.pdf","739421800-Financial_1-20251101_21_27_31.pdf","739421800-Closing-20251101_21_27_31.pdf","739421800-Internal-20251101_21_27_31.pdf","739421800-Closing_4-20251101_21_27_31.pdf","739421800-MOU_5-20251101_21_27_31.pdf","739421800-Title-20251101_21_27_31.pdf","739421800-Closing_2-20251101_21_27_31.pdf"]
+    [2] => Action: Continue
+)
+```
+
+#### Error when making file request
+
+```pseudocode
+["Status: ERROR","MSG: file id can not be NULL","Action: Please try again"]
+```
