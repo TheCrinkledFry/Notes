@@ -124,7 +124,7 @@ When trying to first create session, if it is not able to because a previous one
 - When calling the create_session it is -->                                                `"username=" . USERNAME . "&password=" . PASSWORD;`
 - When calling the close_session it is --> `"sid=$sid"`
 - When calling the query_files it is -->                                                      `$Data = "uid=" . USERNAME . "&sid=$sid";`
-- When calling the ___ it is --> 
+- When calling the request_file it is --> `$Data = `
 
 
 
@@ -251,3 +251,6 @@ Array
 ```pseudocode
 ["Status: ERROR","MSG: file id can not be NULL","Action: Please try again"]
 ```
+
+#### Sucesses when making file request
+
