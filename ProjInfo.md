@@ -7,25 +7,33 @@
 - Documents to upload will be PDF documents ALWAYS, however still error check for other types. These are all scanned pdf documents about loan information
 
 - When it comes to the information that needs to be seen in the report, they need to see:
-
+  
   1. Show all complete loans (loans that have all 8 needed documents)
-
+  
   2. Incomplete loans (missing at least one document) and what are the documents missing for that loan.
+  
   3. Show all incomplete loans
-
+  
   4. How many documents does a loan have?
-
+  
   5. How many copies of the same document for a loan are there
-
+  
   6. Which documents are missing from a particular loan
+  
   7. Show all loans that are missing a particular document
-
+  
   8. What is the most common missing document
+  
   9. sort by document size
+  
   10. Search how many of a particular document there is across all loans
+  
   11. Search by loan ID and particular document
+  
   12. What was the query made by the user, what document was looked up, when was the loan ID looked up, what loan ID was looked up, and at what time and date it was done.
+  
   13. total number of loans on the system
+  
   14. Search how many time a document has been accessed (like downloaded or something) and not just queried.
 
 - The document needed for a loan to be complete are: credit document, closing document, title document, financial document, personal document, legal document, MOU document, and disclosure document.
@@ -49,27 +57,29 @@
 - Have way to fix that if a document that was sent to loan B, but was supposed to be part of loan A, is some how auto fixed to move to the correct one.
 
 - All documents should ALWAYS be labeled, but should still check to make sure that is the case
-
-
+  
+  
 
 Crontab -e --> edit current users crontab
 
 Crontab -l --> List current users crontab
 
+> This is a small test
+
 > [!NOTE]
->
+> 
 > The Cron tab will execute sequentially
->
+> 
 > The Cron does not have any environment variables and does not know any paths to anything in the system so it all needs to be specified like where is the php thing
->
+> 
 > /usr/bin/php
->
+> 
 > sudo su --> will bring to the root user so can mess with cron tab
 
 
 
 > [!IMPORTANT]
->
+> 
 > To check PHP errors on the system do `cat /var/log/nginx/error.log`
 
 
@@ -125,8 +135,8 @@ When trying to first create session, if it is not able to because a previous one
 - When calling the close_session it is --> `"sid=$sid"`
 - When calling the query_files it is -->                                                      `$Data = "uid=" . USERNAME . "&sid=$sid";`
 - When calling the request_file it is --> `$Data = `
-
-
+  
+  
 
 #### Previous session exist when trying to connect
 
@@ -254,3 +264,12 @@ Array
 
 #### Sucesses when making file request
 
+```php
+<?php
+
+$x = 50;
+
+for (;$x < 100; $x++)
+    echo $x;
+?>
+```
