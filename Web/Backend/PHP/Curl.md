@@ -1,12 +1,12 @@
 # CURL
 
-*CURL* is a way in PHP to make requests from things like APIs or just        communicating with other servers. The most common protocol to be used with this is HTTP/HTTPS.
+*CURL* is a way in PHP to make requests from things like APIs or just communicating with other servers. The most common protocol to be used with this is HTTP/HTTPS.
 
 
 
 The PHP *cURL extension* (`curl_*` functions) acts as a wrapper around this   library, allowing PHP scripts to perform robust network requests for tasks like interacting with APIs, logging into websites, or downloading files.
 
-
+### This is a small thing
 
 Here are the common steps that would be taken to execute a curl request:
 
@@ -19,7 +19,11 @@ Here are the common steps that would be taken to execute a curl request:
 
 
 
-### Syntax for the functions
+## Syntax for the functions
+
+### Hello
+
+
 
 - **curl_init(OptionalString)** --> this can take one optional string value and that will be for setting the URL for the curl object
 - **curl_setopt(resource \$ch, int \$option, mixed \$value): bool**
@@ -33,7 +37,7 @@ Here are the common steps that would be taken to execute a curl request:
 
 
 
-The **curl_init()** is what is needed to first create a curl resource object. This is what will be returned to the variable and should be the first thing done.
+The **curl_init()** is what is needed to first create a curl resource object. This is what will be returned to the variable and should be the first thing done. I am going to keep going until I hit the end and this will soon be the last thing I write G
 
 > [!TIP]
 >

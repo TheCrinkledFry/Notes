@@ -36,7 +36,7 @@
   
   14. Search how many time a document has been accessed (like downloaded or something) and not just queried.
 
-- The document needed for a loan to be complete are: credit document, closing document, title document, financial document, personal document, legal document, MOU document, and disclosure document.
+- The document needed for a loan to be complete are: credit document,   closing document, title document, financial document, personal document, legal document, MOU document, and disclosure document.
 
 - The documents will be read only so cannot edit them and if wanting to change them, must upload new version of it.
 
@@ -132,11 +132,19 @@ When trying to first create session, if it is not able to because a previous one
 
 - When calling the clear_session it is -->                                                  `"username=" . USERNAME . "&password=" . PASSWORD;`
 - When calling the create_session it is -->                                                `"username=" . USERNAME . "&password=" . PASSWORD;`
+<<<<<<< HEAD
 - When calling the close_session it is --> `"sid=$sid"`
 - When calling the query_files it is -->                                                      `$Data = "uid=" . USERNAME . "&sid=$sid";`
 - When calling the request_file it is --> `$Data = `
   
   
+=======
+- When calling the close_session it is --> `"sid=$Sid"`
+- When calling the query_files it is -->                                                      `$Data = "uid=" . USERNAME . "&sid=$Sid";`
+- When calling the request_file it is --> `$Data = "sid=$Sid"`
+
+
+>>>>>>> e447b602f91d9a31e3ea34cddf8c28fe54a79e20
 
 #### Previous session exist when trying to connect
 
@@ -160,8 +168,6 @@ Array
 )
 ```
 
-
-
 #### Sucessful clearing of session
 
 ```pseudocode
@@ -183,8 +189,6 @@ Array
     [2] => Action: Create session first
 )
 ```
-
-
 
 #### Success of closing session
 
@@ -208,8 +212,6 @@ Array
 )
 ```
 
-
-
 #### Incorrect endpoint reached
 
 ```pseudocode
@@ -220,8 +222,6 @@ Array
     [2] => Action: Please try again
 )
 ```
-
-
 
 #### Failure to query files
 
@@ -256,14 +256,26 @@ Array
 )
 ```
 
-#### Error when making file request
+#### Query files success but nothing returned
+
+```pseudocode
+Array
+(
+    [0] => Status: OK
+    [1] => MSG: []
+    [2] => Action: Continue
+)
+```
+
+Error when making file request
 
 ```pseudocode
 ["Status: ERROR","MSG: file id can not be NULL","Action: Please try again"]
 ```
 
-#### Sucesses when making file request
+#### Error when making file request with bad Sid
 
+<<<<<<< HEAD
 ```php
 <?php
 
@@ -273,3 +285,59 @@ for (;$x < 100; $x++)
     echo $x;
 ?>
 ```
+=======
+```pseudocode
+Array
+(
+    [0] => Status: ERROR
+    [1] => MSG: SID not found
+    [2] => Action: Please try again.
+)
+```
+
+
+
+#### Error when making a file request with bad file name
+
+```pseudocode
+["Status: ERROR","MSG: file id can not be NULL","Action: Please try again"]
+```
+
+
+
+#### Error when making request with bad sid and file name
+
+```pseudocode
+["Status: ERROR","MSG: SID\/UID Missing","Action: Please try again"]
+```
+
+
+
+When parsing the file name, it is seperated by `-`. The parts are:
+
+1. Loan number
+2. Document type
+3. Timestamp --> YEARMONTHDAY_HOUR_MINUTE_SECOND
+4. Ending part is file extension like seperated with .pdf and not -
+
+#### EXAMPLE FILE NAMES
+
+- 913004768-Closing-20251103_07_45_12.pdf
+- 913004768-Financial_3-20251103_07_45_12.pdf
+- 402981763-Internal-20251103_07_45_12.pdf
+- 781243960-Financial_1-20251103_07_45_12.pdf
+
+
+
+```php
+<?php
+  $db = new mysqli("localhost", "WebUser", PASSWORD, "file_storage");
+  $hold = explode("-", $file);
+```
+
+
+
+
+
+54 235 589
+>>>>>>> e447b602f91d9a31e3ea34cddf8c28fe54a79e20
