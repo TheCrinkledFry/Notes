@@ -28,6 +28,22 @@ When it comes to this, it is basically the same as C.
 >
 > Just like in C, if there is only one statement will be executed there is no need to put the curly braces.
 
+> [!TIP]
+>
+> Oojojoj
+
+> [!IMPORTANT]
+>
+> Kkkjk
+
+> [!WARNING]
+>
+> Hjhhih
+
+> [!CAUTION]
+>
+> Huh
+
 
 
 ### if-else if
@@ -44,7 +60,7 @@ When it comes to this, it is basically the same as C.
   }
 ```
 
-
+Tut
 
 ### if-else
 
