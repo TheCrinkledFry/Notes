@@ -37,7 +37,7 @@ Here are the common steps that would be taken to execute a curl request:
 
 
 
-The **curl_init()** is what is needed to first create a curl resource object. This is what will be returned to the variable and should be the first thing done. I am going to keep going until I hit the end and this will soon be the last thing I write G
+The **curl_init()** is what is needed to first create a curl resource object. This is what will be returned to the variable and should be the first thing done.
 
 > [!TIP]
 >
@@ -45,9 +45,7 @@ The **curl_init()** is what is needed to first create a curl resource object. Th
 
 
 
-[click here](https://www.php.net/manual/en/curl.constants.php#constant.curlopt-abstract-unix-socket) to see all the options this can be set to
-
-Common options here
+[click here](https://www.php.net/manual/en/curl.constants.php#constant.curlopt-abstract-unix-socket) to see all the options this can be set to, but some common options here:
 
 | Basic Request & Response Handling | Description & Value Type                                     |
 | --------------------------------- | ------------------------------------------------------------ |

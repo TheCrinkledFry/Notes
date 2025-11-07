@@ -138,6 +138,7 @@ When trying to first create session, if it is not able to because a previous one
 - When calling the request_file it is --> `$Data = `
   
   
+
 =======
 - When calling the close_session it is --> `"sid=$Sid"`
 - When calling the query_files it is -->                                                      `$Data = "uid=" . USERNAME . "&sid=$Sid";`
