@@ -6,7 +6,7 @@ PHP is more of a template language compared to something like a scripting langua
 
 
 
-A PHP file almost acts as a replacement for html files. Inside a php, writing html inside it like a normal html file will be ok. The only difference is this will have the extension *.php*.
+A PHP file almost acts as a replacement for html files. Inside a PHP, writing html inside it like a normal html file will be ok. The only difference is this will have the extension *.php*.
 
 
 

@@ -20,9 +20,3 @@ for ($i = 0; $i < 5; $i++) {
 	}
 } // will break out of both of the for loops
 ```
-
-
-
-## Continue
-
-This works just like other languages

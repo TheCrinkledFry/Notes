@@ -6,7 +6,7 @@
 
 The PHP *cURL extension* (`curl_*` functions) acts as a wrapper around this   library, allowing PHP scripts to perform robust network requests for tasks like interacting with APIs, logging into websites, or downloading files. *this is a good thing* **and this is a scare thing**
 
-
+### This is a small thing
 
 Here are the common steps that would be taken to execute a curl request:
 
@@ -19,7 +19,11 @@ Here are the common steps that would be taken to execute a curl request:
 
 
 
-### Syntax for the functions
+## Syntax for the functions
+
+### Hello
+
+
 
 - **curl_init(OptionalString)** --> this can take one optional string value and that will be for setting the URL for the curl object
 - **curl_setopt(resource \$ch, int \$option, mixed \$value): bool**
@@ -61,9 +65,7 @@ The **curl_init()** is what is needed to first create a curl resource object. Th
 
 ## Yes
 
-[click here](https://www.php.net/manual/en/curl.constants.php#constant.curlopt-abstract-unix-socket) to see all the options this can be set to
-
-Common options here
+[click here](https://www.php.net/manual/en/curl.constants.php#constant.curlopt-abstract-unix-socket) to see all the options this can be set to, but some common options here:
 
 | Basic Request & Response Handling | Description & Value Type                                     |
 | --------------------------------- | ------------------------------------------------------------ |
