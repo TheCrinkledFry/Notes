@@ -341,4 +341,3 @@ When parsing the file name, it is seperated by `-`. The parts are:
 
 
 54 235 589
->>>>>>> e447b602f91d9a31e3ea34cddf8c28fe54a79e20

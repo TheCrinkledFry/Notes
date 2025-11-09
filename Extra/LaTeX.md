@@ -58,7 +58,7 @@ prime symbol thing by just putting the ' next to the thing --> $f'$
 
 \lceil and \rceil --> ceiling function symbol. Important to not need both of them --> $\lceil{x+5}\rceil$
 
-put the _ and a thing after it would be a subscript --> $g_x^3$
+put the \_ and a thing after it would be a subscript --> $g_x^3$
 
 \ln --> ln symbol --> $\ln$
 
@@ -124,7 +124,7 @@ put the _ and a thing after it would be a subscript --> $g_x^3$
 
 & --> left and right adjust content but can only be used on certain things and places.
 
-Matrix --> need to have the content written between a `\begin{bmatrix}` and `\end{bmartix}` box. Then put al code between it. Use the & to separate the content. $ A = \begin{bmatrix}    1 & 2 \\    3 & 4 \end{bmatrix} $
+Matrix --> need to have the content written between a `\begin{bmatrix}` and `\end{bmartix}` box. Then put al code between it. Use the & to separate the content. $ A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} $
 
 \mod --> used to have the mod word --> $c\mod{e}$
 
@@ -138,10 +138,6 @@ Matrix --> need to have the content written between a `\begin{bmatrix}` and `\en
 
 \textcolor{}{} --> way to give color to sections of writing. First section must be the color coding --> $\textcolor{#ff0382}{x+y\div{\frac{r}{c}}}\textcolor{#04ff00}{+r}$
 
-
-
-
-
 > [!NOTE]
 >
 > add `arc` in front of the sin, tan, and cos symbol to make it the arc version
@@ -153,3 +149,4 @@ Matrix --> need to have the content written between a `\begin{bmatrix}` and `\en
 > [!IMPORTANT]
 >
 > To actual use { or } symbols have to cancel them out by doing `\{` and `\}`
+
