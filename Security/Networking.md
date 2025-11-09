@@ -110,3 +110,37 @@ A **socket** is a way that two different **end systems** are able to know which 
 
 ## Section 2
 
+
+
+### 1.2.0
+
+When it comes to talking about **end systems** (or **host**), these can be divided into two smaller categories: **client** and **server**. A **client** system are things like phones, tablets, TVs, computers, etc. These devices will be the ones that request data from another device. On the other hand, a **server** does not request data and instead is only in charge of sending data to requesting **end systems**. An example of a **server** is a *web server*.
+
+
+
+A **server** will typically be more powerful compared to a normal **client** machine as well.
+
+
+
+Today, most things like **servers** are not a one of and there is a large amount of them together that live in a place called a **data center** that is a massive building to support the needs to contain that many machines at once.
+
+
+
+### 1.2.1
+
+
+
+The **access network** (also known as the **edge network**) defines the segment of the network topology that directly connects an end system to the larger core internet infrastructure. Conceptually, this path is divided into two distinct components:
+
+1. *Originating Segment:* This is the segment where the source **end system** transmits its data to the first router that provides connectivity to the network core (Internet Service Provider network). This is often the consumer's or organization's *edge router*.
+2. *Terminating Segment:* This is the symmetrical segment where the information is finally delivered from the last router within the core network path to the **destination end system**.
+
+
+
+The three most widespread technologies currently employed for *residential broadband access* are **Digital Subscriber Line (DSL)**, **cable internet**, and **Fiber to the Home (FTTH)**.
+
+These technologies differ primarily based on the *physical transmission medium* utilized to connect the residence to the Internet Service Provider (ISP):
+
+- **Digital Subscriber Line (DSL):** Leverages existing traditional *copper* telephone lines to transmit high-speed data.
+- **Cable Internet:** Utilizes the *coaxial cables* and infrastructure originally designed for community antenna television (CATV) systems.
+- **Fiber to the Home (FTTH):** Employs *optical fiber cables* run directly to the customer's premise, which offers the highest capacity and fastest speeds available commercially today.
