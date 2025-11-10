@@ -103,3 +103,122 @@ These technologies differ primarily based on the *physical transmission medium* 
 - **Digital Subscriber Line (DSL):** Leverages existing traditional *copper* telephone lines to transmit high-speed data.
 - **Cable Internet:** Utilizes the *coaxial cables* and infrastructure originally designed for community antenna television (CATV) systems.
 - **Fiber to the Home (FTTH):** Employs *optical fiber cables* run directly to the customer's premise, which offers the highest capacity and fastest speeds available commercially today.
+
+
+
+### 1.2.2
+
+
+
+When it comes to **physical media**, this is the actual physical thing that send the data between the devices. There are differnt types that change how mant bits and how fast can be sent per second. Some populat examples are twisted-pair copper wire, coaxial cable, multimode fiber-optic cable, terrestrial radio spectrum, and satellite radio    spectrum.
+
+
+
+When it comes to the many devices that are connected to each other, they all do not need to use the same **physical media** type. For example, if devices A to B used twisted-pair cable and devices B - C used fiber-optic that is ok.
+
+
+
+There is another way to even more divide the types of **physical media**:
+
+1. *Guided Media* are the physical components that can be touched and are physically connected from one device to the next
+2. *Unguided Media* are the devices that do not need to be connected together to work, but can send data to each other still. An example of this is a cellphone tower.
+
+
+
+## Section 1.3
+
+
+
+### 1.3.1
+
+
+
+Remember that when two **end system** devices want to communicate with each other, they need connect with each other. The sending of data can be to establish a connection with the other **end system** or to send the actual data to the **end system**.
+
+
+
+When the data is send, it is not all sent at once. Instead it is broken down into smaller sub-chunks with added *header data* to form a **packet**.
+
+
+
+When it comes to the actual sending of the data (**packets**), this is done with           **packet switches**. This is just a collection of *routers* and *link layer switch* that send the data across each the last one is able to send its data to the destination **end system**.
+
+
+
+While the **packet switch** is just the thing that determines where the sent data (**packet**) should go next (another **packet switch** or destination **end system**), the **communication link** is what actually sends the data from one device to the next. Remember, there can be multiple differnt **communication link** types. Each of the types determine the speed at which data is sent across the network.
+
+
+
+When it comes to the rules on how the data should travel, there are a few differnt  methods to this:
+
+1. *store and forward transmission*: This is the technique that **packet switches** use to  accept data on their *incoming communication links*. This means that ALL the data from the current packet on the incoming link must be processed before ANY other can be processed next. Once that is done THEN is can start to send the data on its *outbound link*.
+
+
+
+> [!NOTE]
+>
+> The most common technique that **packet switches** use to get data is     *store and forward transmission*.
+
+
+
+> An example of store and forward
+>
+> There are three devices on the network. A (souce end system), B (packet switch), and C (destination end system). There is nine megabytes of data to send. The data needs to be sent in smaller chunks so the data is parsed into three megabyte chunks with a one megabyte chunk of header data added to that to form a packet. Now device A will send those three packets over to device C. To do that it needs the help of device B. Device B uses the store and forward method, so when A sends the first packet over to B, it has to fully process on data on the incoming communication link and once that is done then it can start to send the data on the outgoing communication link to device C. At the same time it is sending the data, since it was all fully processed, now it can accept another packet on the inbound communication link while the other packet is being sent on its outing communicaion link.
+
+
+
+When a **packet** is being sent across a network, there could be multiple **packet switches** it has to go across, the communicaion links could be slower at some places compared to others, it could be a queue of **packets** to process, etc. All these factors being considered and calculated for a single **packet** is called **end-to-end delay**. This means the total time it took for a single data **packet** to get from the source **end system** to the destination **end system**.
+
+
+
+In reality, each **packet switch** has multiple incoming and outgoing **communicaion links**. Because of this, it makes it easier to of course send and recieve data at once. However, each **outbound link** does not go to the same place and multiple **packets** could need to go out to the same **outbound link** at once. Because of that, it results in a queue called the **output buffer** (**output queue**). Each **output link** has its own buffer space to store **packets** until the current working **packet** is fully sent out of the device and then the next one can start. The time that a single **packet** spends waiting in the queue is called **queing delay**.
+
+> [!IMPORTANT]
+>
+> If the output buffer for a communication link is full, then there will not be a place to store the next packet and there could be a risk of that non-stored packet of being lost; this is called **packet loss**. Meaning the destination end system will never get it, so it results in corrupted data because the destination end system will not have all the original data needed to correctly process the information.
+
+
+
+When it comes to how **packet switches** determine what outgoing **communication link** to send the **packet** on, this is different depending on the type of network, but will be      describing how this works in terms of the internet.
+
+
+
+All **end system** devices have something called an **IP address**. This **IP address** is how a  device location is identified on a network. A **packet switch** identifies which outgoing **communication link** to send the **packet** on using the **IP address**. The way a **packet switch** even gets the IP address of the destination **end system** is from the source **end system** adding that data in its *header data* section.
+
+
+
+A **packet switch** has something called a **routing table** that it uses as a reference when determining what outgoing **communication link** to send the **packet** on. The **packet switch** will look at a portion of the given destination **IP address** in the reciving **packets header data** along with the **routing table** and then use that to determine what **outbound link** to choose.
+
+
+
+When it comes to how a **routing table** is set, this is done with special **routing protocols**. This will be talked about more later on.
+
+> [!IMPORTANT]
+>
+> Make sure to remember the difference between packet switching and packet switches.
+
+
+
+### 1.3.2
+
+
+
+Another way to send data across a network is called **circuit switching**. Unlike **packet switching**, a **circuit switch** network will reserve a set of outbound and inbound        **communication links** across all **packet switches** that connect from the source to       destination **end system** until the source **end system** no longer wants to send data; unlike **packet switching** where a **packet** temporarily resurves the current **communicaion link** it is using and nothing else so everyone can use the resources. 
+
+
+
+The way a **circuit switch** network works is using **multiplexing**. **Multiplexing** is a technique that allows multiple distinct signals or data streams to share a single common        communication channel (like a wire, cable, or frequency spectrum) and the types are:
+
+1. **Frequency-division multiplexing (FDM)**: Analogous to having separate lanes on a  highway for different cars. It divides the total **bandwidth** of the communication medium into multiple, non-overlapping **frequency bands**, and each signal is allocated its own unique frequency band for the entire duration of the transmission.
+2. **Time-division multiplexing (TDM)**: TDM is like a time-share system where all signals share the same, full channel, but only one signal is permitted to transmit at any given instant. It divides the available *time* on the channel into extremely short, recurring time slots, and each signal is allocated an exclusive slot in a fixed, repeating        sequence.
+
+
+
+> [!TIP]
+>
+> There are some pros and cons to using a **circuit switch** and **packet switch**           infrastructure 
+
+> [!TIP]
+>
+> **Bandwidth** just means the data transfer rate
+
