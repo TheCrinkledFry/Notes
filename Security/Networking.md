@@ -157,7 +157,7 @@ When it comes to the rules on how the data should travel, there are a few differ
 
 > [!NOTE]
 >
-> The most common technique that **packet switches** use to get data is     *store and forward transmission*.
+> The most common technique that **packet switches** use to get data is *store and forward transmission*.
 
 
 
@@ -221,4 +221,68 @@ The way a **circuit switch** network works is using **multiplexing**. **Multiple
 > [!TIP]
 >
 > **Bandwidth** just means the data transfer rate
+
+# Keywords
+
+| Keyword | Description |
+| ------- | ----------- |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
+|         |             |
 
