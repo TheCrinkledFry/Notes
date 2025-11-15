@@ -285,6 +285,34 @@ When it comes to identifying a variable type, each one is placed into a certain 
 
 
 
+### Strings
+
+
+
+There is a special way to make strings called *heredoc* string. These are special strings that basically work like normal double quoted strings. This are also declared differently compared to normal strings. These require the the text to start with `<<<CustomName` and then end with  `CustomName`. This custom can be anything, but should be named something to describe what the string will be.
+
+
+
+> [!IMPORTANT]
+>
+> ```php
+> <?php
+>   $str = <<<HTML
+>   <div>
+>   	<h1>This is better</h1>
+>   	<p>Small test</p>
+>   </div>
+>   HTML;
+> ```
+
+
+
+
+
+
+
+
+
 # Built In Functions
 
 | Function name | Parameters                                                   | Return Type                                                  | Use Case                                                     |
